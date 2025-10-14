@@ -33,3 +33,23 @@
       dest: /app
       remote_src: yes
 
+  - name: install dependencies
+    ansible.builtin.command: npm install # this command should be run where package.json is present i.e /app here
+    args:
+    chdir: /app
+
+  - name: Copy backend service
+    ansible.builtin.copy:
+      src: backend.service
+      dest: /etc/systemd/system/backend.service
+
+  - name: import mysql data
+    community.mysql.mysql_db:
+      login_user: root
+      login_password: "{{ mysql_root_password }}"
+      login_host: "{{ login_host }}"
+      target: /app/schema/backend.sql
+      name: all
+      state: dump
+    
+  
