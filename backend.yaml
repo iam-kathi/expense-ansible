@@ -29,6 +29,7 @@
 
   - name: extract the code
     ansible.builtin.unarchive:
-      src: /tmp/backend.zip
+      src: /tmp/backend.zip # by default ansible thinks this is in ansible sever
       dest: /app
+      remote_src: yes
 
