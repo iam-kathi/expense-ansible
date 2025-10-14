@@ -24,7 +24,7 @@
 
   - name: Download the backend code
     ansible.builtin.get_url:
-      url: hhttps://expense-builds.s3.us-east-1.amazonaws.com/expense-backend-v2.zip
+      url: https://expense-builds.s3.us-east-1.amazonaws.com/expense-backend-v2.zip
       dest: /tmp/backend.zip
 
   - name: extract the code
