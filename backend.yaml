@@ -36,7 +36,7 @@
   - name: install dependencies
     ansible.builtin.command: npm install # this command should be run where package.json is present i.e /app here
     args:
-    chdir: /app
+      chdir: /app
 
   - name: Copy backend service
     ansible.builtin.copy:
