@@ -18,7 +18,7 @@
     loop:
     - nodejs
     - mysql
-    
+
   - name: create expense user
     ansible.builtin.user:
       name: expense
@@ -62,5 +62,5 @@
       login_host: "{{ login_host }}"
       target: /app/schema/backend.sql
       name: all
-      state: dump
+      state: import
   
