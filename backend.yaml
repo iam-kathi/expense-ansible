@@ -40,7 +40,7 @@
       remote_src: yes
 
   - name: install dependencies
-    ansible.builtin.command: npm install # this command should be run where package.json is present i.e /app here
+    ansible.builtin.command: npm install # this command should be run WHERE package.json is present i.e /app here
     args:
       chdir: /app
 
